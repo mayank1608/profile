@@ -1,0 +1,19 @@
+<!-- Intro Section -->
+<section id="home" class="home-banner" data-parallax="scroll" data-image-src="assets/images/homebanner2.jpg">
+    <div class="container" style="background-image: url('');"> 
+        <div class="welcome-text">
+            <h3>Hello! I'm</h3>
+            <h2>{{ profileFullDesc.profileName }}</h2>
+            <div id="typed-strings"> 
+                <h3 aria-hidden="true" *ngFor="let profileSkill of profileSkillsArray">{{ profileSkill }}</h3>
+
+            </div>
+            <h3 class="typed-text"><span id="typed"></span></h3>
+            <a href="#about" class="icon-btn">
+                <i class="fa fa-angle-double-down"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+<!-- Intro Section end -->

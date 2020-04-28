@@ -1,0 +1,39 @@
+<!-- Work Section -->
+<section id="work" class="section grey-bg">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>My <span>Portfolio</span></h2>
+            <p>Some of the projects i recently worked on</p>
+        </div><!-- .section-title -->
+
+        <div class="portfolio-box">
+            <div class="filter" data-aos="fade-down">       
+                <button type="button" class="control m-btn" data-filter="all">All</button>         
+                <button *ngFor="let tag of portfolioTags | slice:1" type="button" class="control m-btn" [attr.data-filter]="'.'+ tag | removewhitespaces | lowercase">{{ tag }}</button>
+            </div>
+            <!-- .filter -->
+
+            <div class="portfolio-filter" data-aos="fade-down">
+                <div class="row">
+                    <div *ngFor="let pdata of portfolioData" [ngClass]="'col-sm-4 col-xs-6 mix'" [class]="pdata.portfolioTag | removewhitespaces | lowercase">
+                        <div class="portfolio-elem animate">
+
+                            <a [href]="pdata.portfolioURL" *ngIf="pdata.portfolioURL == 'javascript:void(0)'">
+                                <img [src]="pdata.portfolioImage" title="{{pdata.portfolioName}}" alt="{{pdata.portfolioName}}" />
+                            </a>
+                            <a [href]="pdata.portfolioURL" *ngIf="pdata.portfolioURL != 'javascript:void(0)'" target="_blank">
+                                <img [src]="pdata.portfolioImage" title="{{pdata.portfolioName}}" alt="{{pdata.portfolioName}}" />
+                            </a>
+                            <div class="hover">
+                                <h4>{{pdata.portfolioName | uppercase}}</h4>
+                                <label>{{pdata.portfolioTag | uppercase}}</label>
+                            </div>
+                        </div>
+                    </div><!-- .col-sm-4 col-sm-12 -->
+                </div><!-- .row -->
+            </div><!-- .portfolio-filter -->
+
+        </div><!-- .portfolio-box -->
+    </div><!-- .container -->
+</section>
+<!-- Work Section end -->

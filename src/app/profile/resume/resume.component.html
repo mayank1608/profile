@@ -1,0 +1,36 @@
+<!-- Resume Section -->
+<section id="resume" class="section">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2><span>My</span> Resume</h2>
+            <p>My education and work experience</p>
+        </div><!-- .section-title -->
+
+        <div class="row">
+            <div class="col-sm-6 col-xs-12" data-aos="fade-down-right">
+                <div class="resume-box">
+                    <h4>WORK</h4>
+                    <div class="timeline">
+                        <div class="entry" *ngFor="let timeline of profileExperience">
+                            <div class="time on">{{ timeline.from_to_month_year }}</div>
+                            <div class="content"><span class="strong">{{ timeline.organization }}</span>{{ timeline.designation }}</div>
+                        </div><!-- .entry -->
+                    </div><!-- .timeline -->
+                </div><!-- .resume-box -->
+            </div><!-- .col-sm-6 col-xs-12 -->
+
+            <div class="col-sm-6 col-xs-12" data-aos="fade-down-left">
+                <div class="resume-box">
+                    <h4>EDUCATION</h4>
+                    <div class="timeline"> 
+                        <div class="entry" *ngFor="let timeline of profileEducation">
+                            <div class="time">{{ timeline.from_to_month_year }}</div>
+                            <div class="content"><span class="strong">{{ timeline.education }}</span>{{ timeline.institution }}</div>
+                        </div><!-- .entry -->
+                    </div><!-- .timeline -->
+                </div><!-- .resume-box -->
+            </div><!-- .col-sm-6 col-xs-12 -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+<!-- Resume Section end -->

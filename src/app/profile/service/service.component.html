@@ -1,0 +1,26 @@
+<!-- Services Section-->
+<section id="services" class="section grey-bg">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>My <span>Services</span></h2>
+            <p>Some of the main services I provide</p>
+        </div><!-- .section-title -->
+
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let service of profileServiceData" data-aos="fade-right">
+                <div class="service">
+                    <span class="service-icon">
+                      <i [ngClass]="service.iconClass" aria-hidden="true"></i>
+                    </span>
+                    <h4>{{service.serviceName}}</h4>
+                    <div class="service-desc">
+                        <p>{{service.serviceDesc}}</p>
+                        <a class="m-btn" href="{{service.serviceURL}}">Learn more</a>
+                    </div><!-- .service-desc -->
+                </div><!-- .service -->
+            </div><!-- .col-sm-4 -->
+
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+<!-- Services Section end -->

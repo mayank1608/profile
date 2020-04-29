@@ -61,13 +61,13 @@ export class ProfileService {
       "id":"6",
       "skillName":"Photoshop",
       "bgColor":"#ffbb37",
-      "progress":"85%",
+      "progress":"65%",
     },
     {
       "id":"7",
       "skillName":"PHP",
       "bgColor":"#735baf",
-      "progress":"85%",
+      "progress":"40%",
     }
   ];
   profileServices:any = [

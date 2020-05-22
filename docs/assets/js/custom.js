@@ -33,7 +33,8 @@
      =====================================*/
     $(function () {
         $("#typed").typed({
-            stringsElement: $('#typed-strings'),
+            // stringsElement: $('#typed-strings'),
+            strings:["FRONTEND DEVELOPER","ANGULAR DEVELOPER","UI DEVELOPER","WEB DESIGNER"],
             typeSpeed: 0,
             startDelay: 0,
             backSpeed: 0,
@@ -87,7 +88,7 @@
         /*=====================================
         Start Portfolio filter
         =====================================*/
-            var mixer = mixitup('.portfolio-filter');                         
+                                   
         /*=====================================
         End Portfolio filter
         =====================================*/
@@ -125,10 +126,17 @@
         /* =====================================
          Elements animating while entering the viewport
          =====================================*/
-        $('.animate').viewportChecker({
-            classToAdd: 'animated fadeIn',
-            offset: 100
-        });
+
+         setTimeout(function(){
+            var mixer = mixitup('.portfolio-filter');  
+            $('.animate').viewportChecker({
+                classToAdd: 'animated fadeIn',
+                offset: 100
+            });
+          }, 100);
+
+
+       
 
 
         /* =====================================

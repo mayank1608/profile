@@ -10,26 +10,26 @@
         <div class="row">
             <div class="col-xs-12 col-sm-5" data-aos="fade-right">
                 <div class="pers-picture">
-                    <img src='{{ profileFullDesc.profilePic }}' title="" alt="" />
+                    <img src='{{ aboutData?.profilePic }}' title="" alt="" />
                 </div><!-- .personal-pic -->
             </div><!-- .col-xs-12 col-sm-5 -->
 
             <div class="col-xs-12 col-sm-7" data-aos="fade-left">
                 <div class="pers-info">
-                    <h3>Hello! i'm {{ profileFullDesc.profileName }}</h3>
-                    <p [innerHTML]="profileFullDesc.profileDesc"></p>
+                    <h3>Hello! i'm {{ aboutData?.profileName }}</h3>
+                    <p [innerHTML]="aboutData?.profileDesc"></p>
                     <div class="social-link" data-aos="fade-up">
                         <ul>
-                            <li><a href="{{profileFullDesc.profileFbLink}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="{{profileFullDesc.profileTwitterLink}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="{{profileFullDesc.profileLinkedinLink}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="{{profileFullDesc.profileGithubLink}}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="{{profileFullDesc.profileWpLink}}" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
+                            <li><a href="{{aboutData?.profileFbLink}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{aboutData?.profileTwitterLink}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="{{aboutData?.profileLinkedinLink}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="{{aboutData?.profileGithubLink}}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="{{aboutData?.profileWpLink}}" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
                         </ul>
                     </div><!-- .social-link -->
                     <div class="about-actions" data-aos="fade-down">
                         <a class="m-btn contact-me" href="#contactform">contact me</a>
-                        <a href="{{profileFullDesc.profilePdfLink}}" target="_blank" class="m-btn">download cv</a>
+                        <a href="{{aboutData?.profilePdfLink}}" target="_blank" class="m-btn">download cv</a>
                     </div>
                 </div><!-- .personal-info -->
                 
@@ -42,7 +42,7 @@
                     <p>My skills in technologies and tools</p>
                 </div>
                 <div class="skillbar-bar-set" data-aos="fade-down">
-                    <div *ngFor="let skill of profileSkillSets" id="skill-{{skill.skillName | lowercase}}"  [attr.data-percent]="skill.progress">
+                    <div *ngFor="let skill of skillData" id="skill-{{skill.skillName | lowercase}}"  [attr.data-percent]="skill.progress">
                         <div class="skillbar clearfix"> 
                             <div class="skillbar-bar color-1" [style.width]="skill.progress">
                                 <div class="skillbar-title" [style.backgroundColor]="skill.bgColor"><span>{{skill.skillName}}</span></div>
@@ -50,8 +50,7 @@
                             </div>                            
                         </div> <!-- End Skill Bar -->
                     </div>
-                    
-                 </div>  <!-- .skillbar-bar-set --> 
+                </div>  <!-- skillbar-bar-set -->
             
             </div><!-- .col-xs-12 col-sm-12 -->
 

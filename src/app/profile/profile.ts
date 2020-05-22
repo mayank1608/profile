@@ -1,7 +1,21 @@
-export class Profile {
-    profileName: string;
-    profileSkills: Array<any>; 
-    profileDesc: string;
-    profileSkillSets: Array<any>;
-    profileServices: Array<any>;
+export interface IProfile {
+    profileName:string;
+    profilePic:string;
+    profileBannerImgUrl:string;
+    profileDesc:string;
+    profileFbLink:string;
+    profileTwitterLink:string;
+    profileLinkedinLink:string;
+    profileGithubLink:string;
+    profileWpLink:string;
+    profilePdfLink:string;
+    profileSkills:any[];
+    profilePortfolioTags:any[];
+    profilePorfolioData:any[];
+    id:number;
+    portfolioName:string;
+    portfolioImage:string;
+    portfolioTag:string;
+    portfolioTech:string;
+    portfolioURL:string;
 }

@@ -6,8 +6,8 @@
             <p>Some of the main services I provide</p>
         </div><!-- .section-title -->
 
-        <div class="row">
-            <div class="col-sm-4" *ngFor="let service of profileServiceData" data-aos="fade-right">
+        <div class="row"  data-aos="fade-bottom">
+            <div class="col-sm-4" *ngFor="let service of serviceData">
                 <div class="service">
                     <span class="service-icon">
                       <i [ngClass]="service.iconClass" aria-hidden="true"></i>

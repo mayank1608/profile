@@ -3,10 +3,9 @@
     <div class="container" style="background-image: url('');"> 
         <div class="welcome-text">
             <h3>Hello! I'm</h3>
-            <h2>{{ profileFullDesc.profileName }}</h2>
+            <h2>{{ name }}</h2>
             <div id="typed-strings"> 
-                <h3 aria-hidden="true" *ngFor="let profileSkill of profileSkillsArray">{{ profileSkill }}</h3>
-
+                <!-- <h3 aria-hidden="true" *ngFor="let skill of skills">{{ skill }}</h3> -->
             </div>
             <h3 class="typed-text"><span id="typed"></span></h3>
             <a href="#about" class="icon-btn">

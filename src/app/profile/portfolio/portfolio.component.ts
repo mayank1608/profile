@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 
 import { RemovewhitespacesPipe } from '../../custompipe/removewhitespaces.pipe';
+import { HttpErrorResponse } from '@angular/common/http';
 // import * as mixitup from 'mixitup';
 // import { mixitup } from 'mixitup';
 
@@ -11,14 +12,22 @@ import { RemovewhitespacesPipe } from '../../custompipe/removewhitespaces.pipe';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-
-  constructor(public profileService: ProfileService) { }
-  public portfolioTags:any;
-  public portfolioData:any;
+  
+  profileData = [];
+  portfolioTags:any;
+  portfolioData:any;
+  constructor(private profileService: ProfileService) { }
   ngOnInit(): void {
-    this.portfolioTags = this.profileService.portfoliotags();
-    this.portfolioData = this.profileService.portfoliodata();
-    console.log("temp");
+    this.profileService.getProfileData().subscribe(
+      data => {
+        this.profileData = data;	 // FILL THE ARRAY WITH DATA.
+        this.portfolioTags = this.profileData[0].profilePortfolioTags;
+        this.portfolioData = this.profileData[0].profilePorfolioData;
+      },
+      (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+    );
     // var mixer = mixitup('.portfolio-filter'); 
   }
 

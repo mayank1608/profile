@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
+import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-about',
@@ -7,14 +8,22 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  public profileFullDesc: any;
-  public profileSkillSets:any;
+  profileData = [];
+  aboutData:any;
+  skillData:any;
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
-    this.profileFullDesc = this.profileService.description();
-    this.profileSkillSets = this.profileService.skills();
-    // console.log(this.profileSkillSets);
+    this.profileService.getProfileData().subscribe(
+      data => {
+        this.profileData = data;
+        this.aboutData = this.profileData[0];
+        this.skillData = this.profileData[0].profileSkillSets;
+      },
+      (err:HttpErrorResponse) => {
+        console.log(err.message);
+      }
+    );
 
   }
 

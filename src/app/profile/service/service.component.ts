@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-service',
@@ -7,11 +8,20 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent implements OnInit {
-  public profileServiceData:any;
+  profileData = [];
+  serviceData = [];
   constructor(public profileService: ProfileService) { }
 
   ngOnInit(): void {
-    this.profileServiceData = this.profileService.services();
+    this.profileService.getProfileData().subscribe(
+      data => {
+        this.profileData = data;
+        this.serviceData = this.profileData[0].profileServices;
+      },
+      (error:HttpErrorResponse) => {
+        console.log(error.message)
+      }
+    );
   }
 
 }

@@ -11,7 +11,7 @@
                 <button type="button" class="control m-btn" data-filter="all">All</button>         
                 <button *ngFor="let tag of portfolioTags | slice:1" type="button" class="control m-btn" [attr.data-filter]="'.'+ tag | removewhitespaces | lowercase">{{ tag }}</button>
             </div>
-            <!-- .filter -->
+            <!-- filter -->
 
             <div class="portfolio-filter" data-aos="fade-down">
                 <div class="row">
